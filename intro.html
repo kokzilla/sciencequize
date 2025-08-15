@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนะนำการแข่งขัน</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div id="start-screen" class="bg-white rounded-xl shadow-2xl p-6 md:p-12 w-full max-w-4xl text-center">
+        <!-- Section 1: Title -->
+        <div class="mb-8">
+            <img src="https://placehold.co/150x150/0284C7/FFFFFF?text=Logo" alt="Logo คณะ" class="mx-auto mb-4 rounded-full">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">การแข่งขันตอบปัญหาวิทยาศาสตร์</h1>
+            <p class="text-xl text-gray-600">ระดับประถมศึกษาตอนปลาย</p>
+            <p class="text-lg text-gray-500 mt-2">วันที่ 19 สิงหาคม 2568</p>
+        </div>
+        
+        <hr class="my-8">
+
+        <!-- Section 2: Rules -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">กติกาการแข่งขัน</h2>
+            <div class="flex justify-center gap-8 text-lg">
+                <p>ข้อสอบจำนวน <span id="total-questions-info">20</span> ข้อ</p>
+                <p>กำหนดเวลาข้อละ 30 วินาที</p>
+            </div>
+        </div>
+
+        <hr class="my-8">
+
+        <!-- Section 3 & 4: Buttons -->
+        <div class="flex flex-col items-center gap-6">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-700 mb-4">ทดลองทำข้อสอบ</h2>
+                <button id="sample-quiz-btn" class="w-full md:w-auto bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 text-xl">
+                    แสดงตัวอย่างข้อสอบ
+                </button>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-gray-700 mb-4">เตรียมพร้อม</h2>
+                <button id="start-quiz-btn" class="w-full md:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-lg transition-transform transform hover:scale-105 text-2xl">
+                    เริ่มการแข่งขัน
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import quizData just to get the total number of questions for the info display.
+        import quizData from './question/quiz-data.js';
+
+        const totalQuestionsInfo = document.getElementById('total-questions-info');
+        const startQuizBtn = document.getElementById('start-quiz-btn');
+        const sampleQuizBtn = document.getElementById('sample-quiz-btn');
+
+        startQuizBtn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        sampleQuizBtn.addEventListener('click', () => {
+            window.location.href = 'sample.html';
+        });
+
+        window.onload = () => {
+            // Display the total number of questions from the imported data.
+            totalQuestionsInfo.textContent = quizData.length;
+        };
+    </script>
+</body>
+</html>
