@@ -28,9 +28,9 @@
         }
 
         .answer-option.correct {
-            background-color: #23b81e !important;
+            background-color: #0b8f07 !important;
             color: white !important;
-            border-color: #059669 !important;
+            border-color: #104333 !important;
         }
 
         #quiz-container {
@@ -163,7 +163,6 @@
             padding: 1.3rem;
             font-weight: 550;
             padding: clamp(3rem, 2vh, 10rem);
-            background-color: rgb(255, 255, 255);
         }
 
         #question-text, .answer-option {
@@ -181,7 +180,7 @@
             justify-content: center;
             line-height: 4rem;
             font-weight: 500;
-            background-color: rgb(240, 226, 180);
+            background-color: rgb(255, 212, 69);
         }
 
         #question-text svg {
@@ -235,7 +234,7 @@
             <div id="qa-container">
                 <!-- Question Area -->
                 <div id="question-wrapper">
-                    <p id="question-text" class="text-gray-800"></p>
+                    <p id="question-text" class="text"></p>
                 </div>
 
                 <!-- Answer Options -->
@@ -378,7 +377,7 @@
                     const options = answerOptionsEl.children;
                     for (let i = 0; i < options.length; i++) {
                         options[i].disabled = true;
-                        options[i].classList.add('opacity-50', 'cursor-not-allowed');
+                        options[i].classList.add('opacity-80', 'cursor-not-allowed');
                     }
                 }
             }, 1000);
